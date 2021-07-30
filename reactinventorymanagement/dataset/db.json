@@ -1,0 +1,30 @@
+{
+    "admin":[
+        {
+            "id":1,
+            "uname":"admin",
+            "passs":"admin"
+        }
+    ],
+    "checker":[
+        {
+        "id":2,
+        "uname":"checker",
+        "passs":"checker"
+        }
+    ],
+    "manager":[
+        {
+        "id":3,
+        "uname":"manager",
+        "passs":"manager"
+        }
+    ],
+    "vendor":[
+        {
+        "id":4,
+        "uname":"vendor",
+        "passs":"vendor"
+        }
+    ]
+}
