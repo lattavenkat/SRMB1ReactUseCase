@@ -9,16 +9,16 @@ export default function AdminDashboard() {
       <div class="area"></div>
       <nav class="main-menu">
         <ul>
-          {/* <li>
+          <li>
             <a href="/admindashboard">
               <i class="fa fa-home fa-2x"></i>
               <span class="nav-text">Dashboard</span>
             </a>
-          </li> */}
+          </li>
           <li class="has-subnav">
             <a href="/requestgoods">
               <i class="fa fa-laptop fa-2x"></i>
-              <span class="nav-text">Request Goods</span>
+              <span class="nav-text">Order Request</span>
             </a>
           </li>
           <li class="has-subnav">
@@ -30,16 +30,21 @@ export default function AdminDashboard() {
           <li class="has-subnav">
             <a href="/addcredentials">
               <i class="fa fa-folder-open fa-2x"></i>
-              <span class="nav-text">Add Credentials</span>
+              <span class="nav-text">Add User Credentials</span>
             </a>
           </li>
           <li>
             <a href="/adminalerts">
               <i class="fa fa-bar-chart-o fa-2x"></i>
-              <span class="nav-text">Alerts</span>
+              <span class="nav-text">Notification</span>
             </a>
           </li>
-          
+          <li>
+            <a href="/orderhistory">
+              <i class="fa fa-bar-chart-o fa-2x"></i>
+              <span class="nav-text">Order History</span>
+            </a>
+          </li>
         </ul>
 
         <ul class="logout">
@@ -53,9 +58,11 @@ export default function AdminDashboard() {
       </nav>
     </div>
     {/* nav bar end */}
-    <div>
-
+    
+    <div class="imgbox">
+      <img src="https://img.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg?size=626&ext=jpg"/>
     </div>
+    
     </div>
   );
 }
