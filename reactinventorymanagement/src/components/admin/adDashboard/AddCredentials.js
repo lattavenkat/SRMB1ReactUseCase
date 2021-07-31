@@ -4,14 +4,13 @@ import { useHistory } from "react-router-dom";
 import CredentialsErrorMessage from "./CredentialsErrorMessage";
 
 export default function AddCredentials() {
- 
   const initialValues = {
     managerfname: "",
     managerlname: "",
     manageremail: "",
-    managermob: ""
+    managermob: "",
   };
-  
+
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setformErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -75,148 +74,163 @@ export default function AddCredentials() {
   };
 
   return (
-    <div className="addcredbody">
-      {/* -------------------------------------------------------------------------------manager---------------------------------------------------------------------------------------------- */}
+     <>
+     <div>
+      <div className="addcredbody">
+        {/* -------------------------------------------------------------------------------manager---------------------------------------------------------------------------------------------- */}
+        {/* Tabs */}
+        <div className="tabs">
+          <div id="tab-3">
+            <div className="mahi_holder">
+              <div className="container">
+                <br />
+                <div className="row bg_3">
+                  <h2 className="credh2">
+                    <i>Manager Information</i>
+                  </h2>
+                </div>
+                <div>
+                  <table class="center" id="credentialstable">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <label> FIRST NAME: </label>
+                          <span class="xfocus-bg"></span>
+                        </td>
+                        <td>
+                          <div class="xcol-3">
+                            <input
+                              class="xeffect-7"
+                              type="text"
+                              name="managerfname"
+                              maxLength="20"
+                              placeholder="Enter first name"
+                              value={formValues.managerfname}
+                              onChange={handleOnChange}
+                            />
 
-      {/* Tabs  */}
-      {/* <div className="tabs"> */}
-      
-      <form className="f1" onSubmit={handleDoSubmit} noValidate>
-              
-      <div id="tab-3">
-        <div className="mahi_holder">
-          <div className="container">
-            <br />
-            <div className="row bg_3">
-              <h2 className="credh2">
-                <i>Manager Information</i>
-              </h2>
+                            <span class="xfocus-border">
+                              <i></i>
+                            </span>
+                          </div>
+                        </td>
+                        <CredentialsErrorMessage
+                          message={formErrors.managerfname}
+                        />
+                      </tr>
+                      <br />
+                      <tr>
+                        <td>
+                          <label> LAST NAME:</label>
+                          <span class="xfocus-bg"></span>
+                        </td>
+                        <td>
+                          {" "}
+                          <div class="xcol-3">
+                            <input
+                              class="xeffect-7"
+                              type="text"
+                              name="managerlname"
+                              maxLength="20"
+                              placeholder="Enter last name"
+                              value={formValues.managerlname}
+                              onChange={handleOnChange}
+                            />
+                            <span class="xfocus-border">
+                              <i></i>
+                            </span>
+                          </div>
+                        </td>
+                        <CredentialsErrorMessage
+                          message={formErrors.managerlname}
+                        />
+                      </tr>
+                      <br />
+                      <tr>
+                        <td>
+                          <label> EMAIL ADDRESS:</label>
+                          <span class="xfocus-bg"></span>
+                        </td>
+                        <td>
+                          {" "}
+                          <div class="xcol-3">
+                            <input
+                              class="xeffect-7"
+                              type="text"
+                              name="manageremail"
+                              maxLength="20"
+                              placeholder="Enter email"
+                              value={formValues.manageremail}
+                              onChange={handleOnChange}
+                            />
+                            <span class="xfocus-border">
+                              <i></i>
+                            </span>
+                          </div>
+                        </td>
+                        <CredentialsErrorMessage
+                          message={formErrors.manageremail}
+                        />
+                      </tr>
+                      <br />
+                      <tr>
+                        <td>
+                          <label> MOBILE NUMBER:</label>
+
+                          <span class="xfocus-bg"></span>
+                        </td>
+                        <td>
+                          <div class="xcol-3">
+                            <input
+                              class="xeffect-7"
+                              type="text"
+                              name="managermob"
+                              maxLength="10"
+                              placeholder="Enter mobile number.."
+                              value={formValues.managermob}
+                              onChange={handleOnChange}
+                            />
+                            <span class="xfocus-border">
+                              <i></i>
+                            </span>
+                          </div>
+                        </td>
+                        <CredentialsErrorMessage
+                          message={formErrors.managermob}
+                        />
+                      </tr>
+                      <tr>
+                        <div className="wrap2">
+                          <button className="addcredbtn2">Submit</button>
+                        </div>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
-            <div>
-              <form className="f1" onSubmit={handleDoSubmit} noValidate>
-                <table class="center" id="credentialstable">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <label> FIRST NAME: </label>
-                        <span class="xfocus-bg"></span>
-                      </td>
-                      <td>
-                        <div class="xcol-3">
-                          <input
-                            class="xeffect-7"
-                            type="text"
-                            name="managerfname"
-                            maxLength="20"
-                            placeholder="Enter first name"
-                            value={formValues.managerfname}
-                            onChange={handleOnChange}
-                          />
-
-                          <span class="xfocus-border">
-                            <i></i>
-                          </span>
-                        </div>
-                      </td>
-                      <CredentialsErrorMessage message={formErrors.managerfname} />
-                    </tr>
-                    <br />
-                    <tr>
-                      <td>
-                        <label> LAST NAME:</label>
-                        <span class="xfocus-bg"></span>
-                      </td>
-                      <td>
-                        {" "}
-                        <div class="xcol-3">
-                          <input
-                            class="xeffect-7"
-                            type="text"
-                            name="managerlname"
-                            maxLength="20"
-                            placeholder="Enter last name"
-                            value={formValues.managerlname}
-                            onChange={handleOnChange}
-                          />
-                          <span class="xfocus-border">
-                            <i></i>
-                          </span>
-                        </div>
-                      </td>
-                      <CredentialsErrorMessage message={formErrors.managerlname} />
-                    </tr>
-                    <br />
-                    <tr>
-                      <td>
-                        <label> EMAIL ADDRESS:</label>
-                        <span class="xfocus-bg"></span>
-                      </td>
-                      <td>
-                        {" "}
-                        <div class="xcol-3">
-                          <input
-                            class="xeffect-7"
-                            type="text"
-                            name="manageremail"
-                            maxLength="20"
-                            placeholder="Enter email"
-                            value={formValues.manageremail}
-                            onChange={handleOnChange}
-                          />
-                          <span class="xfocus-border">
-                            <i></i>
-                          </span>
-                        </div>
-                      </td>
-                      <CredentialsErrorMessage message={formErrors.manageremail} />
-                    </tr>
-                    <br />
-                    <tr>
-                      <td>
-                        <label> MOBILE NUMBER:</label>
-
-                        <span class="xfocus-bg"></span>
-                      </td>
-                      <td>
-                        <div class="xcol-3">
-                          <input
-                            class="xeffect-7"
-                            type="text"
-                            name="managermob"
-                            maxLength="10"
-                            placeholder="Enter mobile number.."
-                            value={formValues.managermob}
-                            onChange={handleOnChange}
-                          />
-                          <span class="xfocus-border">
-                            <i></i>
-                          </span>
-                        </div>
-                      </td>
-                      <CredentialsErrorMessage message={formErrors.managermob} />
-                    </tr>
-                  </tbody>
-                </table>
-                <div className="wrap2">
-            <button className="addcredbtn2">Submit</button>
           </div>
-              </form>
-            </div>
+        </div>
+        </div>
+
+         {/* card1 end  */}
+        <div className="btnpos">
+          <div class="button-container-1">
+            <span class="mas">GO BACK</span>
+            <button
+              id="work"
+              className="bckbtn"
+              name="Hover"
+              onClick={() => {
+                history.goBack();
+              }}
+            >
+              Go Back
+            </button>
           </div>
-          {/* <div className="wrap2">
-            <button className="addcredbtn2">Submit</button>
-          </div>*/}
-        </div><div> 
-          {Object.entries(formErrors).length === 0 && submitted && (
-            <div>
-              <h3>SUBMITTED SUCCESSFULLY</h3>
-            </div>
-        
-      
+        </div>
       </div>
-      {/* </div> */}
-      {/* card1 end */}
-      {/* -------------------------------------------------------------------------------checker---------------------------------------------------------------------------------------------- */}
+       {/* -------------------------------------------------------------------------------checker---------------------------------------------------------------------------------------------- */}
       {/* tab1  */}
       {/* <div id="tab-1">
         <div className="mahi_holder">
@@ -340,24 +354,8 @@ export default function AddCredentials() {
           <div className="wrap1">
             <button className="addcredbtn1">Submit</button>
           </div>
-        </div>
+        </div> 
       </div> */}
-    
-      <div className="btnpos">
-        <div class="button-container-1">
-          <span class="mas">GO BACK</span>
-          <button
-            id="work"
-            className="bckbtn"
-            name="Hover"
-            onClick={() => {
-              history.goBack();
-            }}
-          >
-            Go Back
-          </button>
-        </div>
-      </div>
-    </div>
+     </>
   );
 }
