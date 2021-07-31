@@ -1,8 +1,8 @@
 import React from "react";
-import "./Admindashboarddes.css";
+import './Admindashboarddes.css';
 
 export default function AdminDashboard() {
-  console.warn("Inside Dahboard");
+  console.warn("Inside Dashboard");
   return (
     <div>
     <div>
@@ -56,12 +56,13 @@ export default function AdminDashboard() {
           </li>
         </ul>
       </nav>
+      <div class="imgbox">
+      <img src="https://img.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg?size=626&ext=jpg"/>
+    </div>
     </div>
     {/* nav bar end */}
     
-    <div class="imgbox">
-      <img src="https://img.freepik.com/free-vector/recruit-agent-analyzing-candidates_74855-4565.jpg?size=626&ext=jpg"/>
-    </div>
+    
     
     </div>
   );
