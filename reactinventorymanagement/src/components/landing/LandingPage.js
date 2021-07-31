@@ -70,7 +70,7 @@ export default function LandingPage() {
           </ul>
         </nav>
       </div>
-      <div class="bannerText">
+      <div className="bannerText">
         <h2>INVENTORY MANAGEMENT </h2>
         <br />
         <h3>E-MART GROCERY SHOP</h3>
@@ -81,7 +81,7 @@ export default function LandingPage() {
         </p>
       </div>
 
-      <img src="projimages/invenorygif1.gif" class="myimg" />
+      <img src="projimages/invenorygif1.gif" className="myimg" alt="landingbg" />
     </div>
   );
 }

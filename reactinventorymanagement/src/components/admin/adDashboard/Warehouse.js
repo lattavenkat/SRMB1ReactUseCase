@@ -77,7 +77,7 @@ export default function Warehouse() {
       </div>
       {/* bg-image */}
       <div class="imgbox">
-        <img src="https://media.istockphoto.com/vectors/warehouse-workers-are-storing-boxes-on-the-rack-vector-id965959650?k=6&m=965959650&s=612x612&w=0&h=djRQQrn6bNKg2WSFMrLD0mzJpvWZcY_4nz3c1xRYefs=" />
+        <img src="https://media.istockphoto.com/vectors/warehouse-workers-are-storing-boxes-on-the-rack-vector-id965959650?k=6&m=965959650&s=612x612&w=0&h=djRQQrn6bNKg2WSFMrLD0mzJpvWZcY_4nz3c1xRYefs=" alt="warehouseimg" />
       </div>
     </div>
   );
