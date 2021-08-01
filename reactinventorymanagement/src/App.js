@@ -15,6 +15,8 @@ import Warehouse from "./components/admin/adDashboard/Warehouse";
 import AddCredentials from "./components/admin/adDashboard/AddCredentials";
 import AdminAlerts from "./components/admin/adDashboard/AdminAlerts";
 import OrderHistory from "./components/admin/adDashboard/OrderHistory";
+import RequestedGoodsList from "./components/manager/mandashboard/RequestedGoodsList";
+import RequestStockRefill from "./components/manager/mandashboard/RequestStockRefill";
 
 const App = () => {
   return (
@@ -43,6 +45,10 @@ const App = () => {
           <Route path="/addcredentials" component={AddCredentials} />
           <Route path="/adminalerts" component={AdminAlerts} />        
           <Route path="/orderhistory" component={OrderHistory} />
+          {/* MANAGER DASHBOARD NAVS */}
+          <Route path="/requestedgoodslist" component={RequestedGoodsList} />
+          <Route path="/requeststockrefill" component={RequestStockRefill} />
+
         </Switch>
       </Router>
     </header>
