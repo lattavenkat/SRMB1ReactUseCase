@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import './AddCredentialsdes.css';
 import CredentialsErrorMessage from "./CredentialsErrorMessage";
-
+import './Common.css';
 export default function AddManagerInfo() {
   //manager
   const initialValues = {
+    managerid:"",
     managerfname: "",
     managerlname: "",
+    managerpass:"",
     manageremail: "",
     managermob: "",
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setformErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-
+  const [Data, setData] = useState(0);
   //onformsubmit-manager
   const handleDoSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +25,22 @@ export default function AddManagerInfo() {
 
     setSubmitted(true);
     // console.log("Form has been Submitted sucessfully ");
+    const manOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formValues),
+    };
+
+    fetch("http://localhost:8080/api/managerinfo", manOptions)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("saved");
+        alert("successfully submitted");
+        console.log(data.id);
+        setData(data.id);
+      });
   };
   //onchangeevent-manager
   const handleOnChange = (event) => {
@@ -43,8 +61,10 @@ export default function AddManagerInfo() {
     let errors = {};
     console.log(values);
     const onlystr = /^[a-zA-Z]+$/;
-
-    if (!values.managerfname) {
+    if (!values.managerid) {
+      errors.managerid = "*Mandatory";
+    }
+    else if (!values.managerfname) {
       errors.managerfname = "*First Name cannot be empty";
     } else if (!onlystr.test(values.managerfname)) {
       errors.managerfname = "*Only alphabets are Permitted";
@@ -53,6 +73,9 @@ export default function AddManagerInfo() {
       errors.managerlname = "*Last Name cannot be empty";
     } else if (!onlystr.test(values.managerlname)) {
       errors.managerlname = "*Only alphabets are Permitted";
+    }
+    if (!values.managerpass) {
+      errors.managerpass = "*Password cannot be empty";
     }
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.manageremail) {
@@ -77,6 +100,32 @@ export default function AddManagerInfo() {
         <form className="f1" onSubmit={handleDoSubmit} noValidate>
           <table class="center" id="credentialstable">
             <tbody>
+            <tr>
+                <td>
+                  <label> MANAGER ID: </label>
+                  <span class="xfocus-bg"></span>
+                </td>
+                <td>
+                  <div class="xcol-3">
+                    <input
+                      class="xeffect-7"
+                      type="text"
+                      name="managerid"
+                      maxLength="20"
+                      placeholder="Enter valid id"
+                      value={formValues.managerid}
+                      onChange={handleOnChange}
+                    />
+
+                    <span class="xfocus-border">
+                      <i></i>
+                    </span>
+                  </div>
+                </td>
+                <CredentialsErrorMessage message={formErrors.managerid} />
+              </tr>
+              <br />
+              
               <tr>
                 <td>
                   <label> FIRST NAME: </label>
@@ -125,6 +174,31 @@ export default function AddManagerInfo() {
                   </div>
                 </td>
                 <CredentialsErrorMessage message={formErrors.managerlname} />
+              </tr>
+              <br />
+              <tr>
+                <td>
+                  <label> MANAGER PASSWORD: </label>
+                  <span class="xfocus-bg"></span>
+                </td>
+                <td>
+                  <div class="xcol-3">
+                    <input
+                      class="xeffect-7"
+                      type="text"
+                      name="managerpass"
+                      maxLength="20"
+                      placeholder="Enter password"
+                      value={formValues.managerpass}
+                      onChange={handleOnChange}
+                    />
+
+                    <span class="xfocus-border">
+                      <i></i>
+                    </span>
+                  </div>
+                </td>
+                <CredentialsErrorMessage message={formErrors.managerpass} />
               </tr>
               <br />
               <tr>
@@ -189,10 +263,11 @@ export default function AddManagerInfo() {
                   <br /> <h3 className="prnt1">SUBMITTED SUCCESSFULLY</h3>
                   <br />{" "}
                   <p class="prnt">
-                    <b>First Name: </b>
-                    {formValues.managerfname}
+                   
+                    {/* {formValues.managerfname} */}
+                    <b>{formValues.managerfname} 's credentials has been added!</b>
                   </p>
-                  <p class="prnt">
+                  {/* <p class="prnt">
                     <b>Last Name: </b> {formValues.managerlname}
                   </p>
                   <p class="prnt">
@@ -201,7 +276,7 @@ export default function AddManagerInfo() {
                   <p class="prnt">
                     <b>Contact Number: </b>
                     {formValues.managermob}
-                  </p>
+                  </p> */}
                 </div>
               )}
             </div>

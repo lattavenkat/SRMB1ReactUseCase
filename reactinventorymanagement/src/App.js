@@ -17,6 +17,10 @@ import AdminAlerts from "./components/admin/adDashboard/AdminAlerts";
 import OrderHistory from "./components/admin/adDashboard/OrderHistory";
 import RequestedGoodsList from "./components/manager/mandashboard/RequestedGoodsList";
 import RequestStockRefill from "./components/manager/mandashboard/RequestStockRefill";
+import ManagerAlert from "./components/manager/mandashboard/ManagerAlert";
+import RequestAction from "./components/vendor/vendashboard/RequestAction";
+import ViewDamaged from "./components/vendor/vendashboard/ViewDamaged";
+import VendorReport from "./components/vendor/vendashboard/VendorReport";
 
 const App = () => {
   return (
@@ -26,7 +30,6 @@ const App = () => {
         {/* <AdminDashboard/> */}
 
         <Switch>
-          
           <Route exact path="/" component={LandingPage} />
           <Route path="/landingpage" component={LandingPage} />
           {/* LOGINS */}
@@ -43,12 +46,17 @@ const App = () => {
           <Route path="/requestgoods" component={RequestGoods} />
           <Route path="/warehouse" component={Warehouse} />
           <Route path="/addcredentials" component={AddCredentials} />
-          <Route path="/adminalerts" component={AdminAlerts} />        
+          <Route path="/adminalerts" component={AdminAlerts} />
           <Route path="/orderhistory" component={OrderHistory} />
           {/* MANAGER DASHBOARD NAVS */}
           <Route path="/requestedgoodslist" component={RequestedGoodsList} />
           <Route path="/requeststockrefill" component={RequestStockRefill} />
-
+          <Route path="/manageralert" component={ManagerAlert} />
+          {/* VENDOR DASHBOARD NAVS*/}
+          <Route path="/requestaction" component={RequestAction} />
+          <Route path="/viewdamaged" component={ViewDamaged} />
+          <Route path="/vendorreport" component={VendorReport} />
+          
         </Switch>
       </Router>
     </header>

@@ -1,10 +1,11 @@
-import React from 'react'
-import { useHistory } from 'react-router';
+import React from "react";
+import { useHistory } from "react-router";
+import './Common.css';
 export default function AdminAlerts() {
-    const history = useHistory();
-    return (
-        <div>
-          <div className="btnpos">
+  const history = useHistory();
+  return (
+    <div>
+      <div className="btnpos">
         <div class="button-container-1">
           <span class="mas">GO BACK</span>
           <button
@@ -18,7 +19,7 @@ export default function AdminAlerts() {
             Go Back
           </button>
         </div>
-      </div> 
-        </div>
-    )
+      </div>
+    </div>
+  );
 }

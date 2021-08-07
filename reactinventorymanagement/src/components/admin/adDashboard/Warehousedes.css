@@ -138,3 +138,89 @@
       margin-left: 600px;
     } */
       
+
+    /* table design */
+
+    .card{
+      font-family: fantasy;
+      padding: 10px;
+      margin-top: 20px;
+      color: black;
+      left: 90px;
+      width: 1600px;
+      right: 30px;
+      background-color: #ff6700;
+      font-size: 20px;
+    }
+  
+    .table-container th h1 {
+      font-weight: bold;
+      font-size: 1em;
+      text-align: left;
+      color: #EDEDED;
+  }
+  
+  .table-container td {
+      font-weight: normal;
+      font-size: 1em;
+      -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+      -moz-box-shadow: 0 2px 2px -2px #0E1119;
+      box-shadow: 0 2px 2px -2px #0E1119;
+  }
+  
+  .table-container {
+      text-align: left;
+      overflow: hidden;
+      width: 80%;
+      margin: 0 auto;
+      display: table;
+      padding: 0 0 8em 0;
+  }
+  
+  .table-container td, .table-container th {
+      padding-bottom: 2%;
+      padding-top: 2%;
+  padding-left:2%;  
+  }
+  
+  /* Background-color of the odd rows */
+  .table-container tr:nth-child(odd) {
+      background-color: white;
+  }
+  
+  /* Background-color of the even rows */
+  .table-container tr:nth-child(even) {
+      background-color: #ff6700;
+  }
+  
+  .table-container th {
+      background-color: #1F2739;
+  }
+  
+  .table-container td:first-child { color: #0f0e0e; }
+  
+  .table-container tr:hover {
+   background-color: white;
+  -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+       -moz-box-shadow: 0 6px 6px -6px #0E1119;
+            box-shadow: 0 6px 6px -6px #0E1119;
+  }
+  
+  .table-container td:hover {
+  background-color: rgb(255, 123, 0);
+  color: #403E10;
+  font-weight: bold;
+  
+  box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+      transition-duration: 0.4s;
+      transition-property: all;
+  transition-timing-function: line;
+  }
+  
+  @media (max-width: 800px) {
+  .table-container td:nth-child(4),
+  .table-container th:nth-child(4) { display: none; }
+  }

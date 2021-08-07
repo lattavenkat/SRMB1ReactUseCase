@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CredentialsErrorMessage from "./CredentialsErrorMessage";
 import "./AddCredentialsdes.css";
-
+import './Common.css';
 export default function AddCheckerInfo() {
   //checker
   const initialValues = {

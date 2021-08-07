@@ -2,7 +2,7 @@ import React from "react";
 import AddCheckerInfo from "./AddCheckerInfo";
 import AddManagerInfo from "./AddManagerInfo";
 import "./AddCredentialsdes.css";
-
+import './Common.css';
 import { useHistory } from "react-router-dom";
 
 export default function AddCredentials() {
@@ -54,7 +54,7 @@ export default function AddCredentials() {
           </div>
         </div>
 
-        {/* card1 end  */}
+        {/* card2 end  */}
 
         <div className="btnpos">
           <div class="button-container-1">

@@ -1,6 +1,6 @@
 import React from "react";
 import './Admindashboarddes.css';
-
+import './Common.css';
 export default function AdminDashboard() {
   console.warn("Inside Dashboard");
   return (

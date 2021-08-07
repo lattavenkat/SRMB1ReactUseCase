@@ -1,7 +1,7 @@
 import React from 'react'
 import './OrderHistorydes.css';
 import { useHistory } from "react-router-dom";
-
+import './Common.css';
 export default function OrderHistory() {
   const history = useHistory();
     return (
