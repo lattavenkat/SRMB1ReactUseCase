@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import './AddCredentialsdes.css';
+import "./AddCredentialsdes.css";
 import CredentialsErrorMessage from "./CredentialsErrorMessage";
-import './Common.css';
+import "./Common.css";
 export default function AddManagerInfo() {
   //manager
   const initialValues = {
-    managerid:"",
+    managerid: "",
     managerfname: "",
     managerlname: "",
-    managerpass:"",
+    managerpass: "",
     manageremail: "",
     managermob: "",
   };
@@ -63,8 +63,7 @@ export default function AddManagerInfo() {
     const onlystr = /^[a-zA-Z]+$/;
     if (!values.managerid) {
       errors.managerid = "*Mandatory";
-    }
-    else if (!values.managerfname) {
+    } else if (!values.managerfname) {
       errors.managerfname = "*First Name cannot be empty";
     } else if (!onlystr.test(values.managerfname)) {
       errors.managerfname = "*Only alphabets are Permitted";
@@ -100,7 +99,7 @@ export default function AddManagerInfo() {
         <form className="f1" onSubmit={handleDoSubmit} noValidate>
           <table class="center" id="credentialstable">
             <tbody>
-            <tr>
+              <tr>
                 <td>
                   <label> MANAGER ID: </label>
                   <span class="xfocus-bg"></span>
@@ -125,7 +124,7 @@ export default function AddManagerInfo() {
                 <CredentialsErrorMessage message={formErrors.managerid} />
               </tr>
               <br />
-              
+
               <tr>
                 <td>
                   <label> FIRST NAME: </label>
@@ -263,20 +262,10 @@ export default function AddManagerInfo() {
                   <br /> <h3 className="prnt1">SUBMITTED SUCCESSFULLY</h3>
                   <br />{" "}
                   <p class="prnt">
-                   
-                    {/* {formValues.managerfname} */}
-                    <b>{formValues.managerfname} 's credentials has been added!</b>
+                    <b>
+                      {formValues.managerfname}'s credentials has been added!
+                    </b>
                   </p>
-                  {/* <p class="prnt">
-                    <b>Last Name: </b> {formValues.managerlname}
-                  </p>
-                  <p class="prnt">
-                    <b>Email Id:</b> {formValues.manageremail}
-                  </p>
-                  <p class="prnt">
-                    <b>Contact Number: </b>
-                    {formValues.managermob}
-                  </p> */}
                 </div>
               )}
             </div>

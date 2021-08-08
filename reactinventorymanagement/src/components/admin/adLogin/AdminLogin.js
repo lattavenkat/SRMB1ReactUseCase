@@ -21,7 +21,7 @@ export default function AdminLogin() {
 
    useEffect(() => {
    
-    axios.get("http://localhost:8000/admin")
+    axios.get("http://localhost:8000/api/admin")
     .then((x) => {
       console.warn("form api data", x);
       setApiValues(x.data);
@@ -72,8 +72,8 @@ export default function AdminLogin() {
     }
     if (Object.keys(errors).length === 0) {
       if (
-        apiValues[0].uname === formValues.uname &&
-        apiValues[0].passs === formValues.pass
+        apiValues[0].username === formValues.uname &&
+        apiValues[0].password === formValues.pass
       ) {
         setSubmitted(true);
       } else {
@@ -107,6 +107,7 @@ export default function AdminLogin() {
             name="pass"
             placeholder="Enter password"
             value={formValues.pass}
+          
             onChange={handleOnChange}
           />
           <AdErrorMessage message={formErrors.pass} />

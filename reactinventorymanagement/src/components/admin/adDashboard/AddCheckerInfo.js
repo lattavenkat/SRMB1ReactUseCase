@@ -5,15 +5,17 @@ import './Common.css';
 export default function AddCheckerInfo() {
   //checker
   const initialValues = {
+    checkerid:"",
     checkerfname: "",
     checkerlname: "",
+    checkerpass:"",
     checkeremail: "",
     checkermob: "",
   };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setformErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-
+  const [Data, setData] = useState(0);
   //onformsubmit-checker
   const handleDoSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +25,22 @@ export default function AddCheckerInfo() {
 
     setSubmitted(true);
     // console.log("Form has been Submitted sucessfully ");
+    const chkOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formValues),
+    };
+
+    fetch("http://localhost:8080/api/checkerinfo", chkOptions)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("saved");
+        alert("Credentials Submitted");
+        console.log(data.id);
+        setData(data.id);
+      });
   };
   //onchangeevent-checker
   const handleOnChange = (event) => {
@@ -43,7 +61,9 @@ export default function AddCheckerInfo() {
     let errors = {};
     console.log(values);
     const onlystr = /^[a-zA-Z]+$/;
-
+    if (!values.checkerid) {
+      errors.checkerid = "*Mandatory";
+    }
     if (!values.checkerfname) {
       errors.checkerfname = "*First Name cannot be empty";
     } else if (!onlystr.test(values.checkerfname)) {
@@ -53,6 +73,9 @@ export default function AddCheckerInfo() {
       errors.checkerlname = "*Last Name cannot be empty";
     } else if (!onlystr.test(values.checkerlname)) {
       errors.checkerlname = "*Only alphabets are Permitted";
+    }
+    if (!values.checkerpass) {
+      errors.checkerpass = "*Password cannot be empty";
     }
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.checkeremail) {
@@ -77,6 +100,31 @@ export default function AddCheckerInfo() {
         <form className="f1" onSubmit={handleDoSubmit} noValidate>
           <table class="center" id="credentialstable">
             <tbody>
+            <tr>
+                <td>
+                  <label> CHECKER ID: </label>
+                  <span class="xfocus-bg"></span>
+                </td>
+                <td>
+                  <div class="xcol-3">
+                    <input
+                      class="xeffect-7"
+                      type="text"
+                      name="checkerid"
+                      maxLength="20"
+                      placeholder="Enter Id"
+                      value={formValues.checkerid}
+                      onChange={handleOnChange}
+                    />
+
+                    <span class="xfocus-border">
+                      <i></i>
+                    </span>
+                  </div>
+                </td>
+                <CredentialsErrorMessage message={formErrors.checkerid} />
+              </tr>
+              <br />
               <tr>
                 <td>
                   <label> FIRST NAME: </label>
@@ -125,6 +173,31 @@ export default function AddCheckerInfo() {
                   </div>
                 </td>
                 <CredentialsErrorMessage message={formErrors.checkerlname} />
+              </tr>
+              <br />
+              <tr>
+                <td>
+                  <label>CHECKER PASSWORD :</label>
+                  <span class="xfocus-bg"></span>
+                </td>
+                <td>
+                  {" "}
+                  <div class="xcol-3">
+                    <input
+                      class="xeffect-7"
+                      type="text"
+                      name="checkerpass"
+                      maxLength="20"
+                      placeholder="Enter Password"
+                      value={formValues.checkerpass}
+                      onChange={handleOnChange}
+                    />
+                    <span class="xfocus-border">
+                      <i></i>
+                    </span>
+                  </div>
+                </td>
+                <CredentialsErrorMessage message={formErrors.checkerpass} />
               </tr>
               <br />
               <tr>
@@ -189,19 +262,9 @@ export default function AddCheckerInfo() {
                   <br /> <h3 className="prnt1">SUBMITTED SUCCESSFULLY</h3>
                   <br />{" "}
                   <p class="prnt">
-                    <b>First Name: </b>
-                    {formValues.checkerfname}
+                    <b>{formValues.checkerfname}'s credentials has been added!</b>
                   </p>
-                  <p class="prnt">
-                    <b>Last Name: </b> {formValues.checkerlname}
-                  </p>
-                  <p class="prnt">
-                    <b>Email Id:</b> {formValues.checkeremail}
-                  </p>
-                  <p class="prnt">
-                    <b>Contact Number: </b>
-                    {formValues.checkermob}
-                  </p>
+                  
                 </div>
               )}
             </div>
