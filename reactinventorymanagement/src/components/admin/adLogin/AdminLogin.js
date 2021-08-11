@@ -21,7 +21,7 @@ export default function AdminLogin() {
 
    useEffect(() => {
    
-    axios.get("http://localhost:8000/api/admin")
+    axios.get("http://localhost:8080/api/admin")
     .then((x) => {
       console.warn("form api data", x);
       setApiValues(x.data);

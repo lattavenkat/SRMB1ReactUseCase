@@ -40,11 +40,15 @@ export default function RequestAction() {
                 data.map((x) => {
                   return (
                     <tr>
-                      <td>{x.id}</td>
-                      <td>{x.pcode}</td>
-                      <td>{x.pcate}</td>
-                      <td>{x.pname}</td>
-                      <td>{x.qty}</td>
+                      <td>{x.ordercode}</td>
+                      <td>{x.productcode}</td>
+                      <td>{x.productname}</td>
+                      <td>{x.productcatg}</td>
+                      <td>{x.productprice}</td>
+                      <td>{x.productqty}</td>
+                      <td>{x.requestDate}</td>
+                      <td>{x.vendorId}</td>
+                      <td>{x.vendorname}</td>97
                       <td>
                         <button className="button1">DENY</button>
                       </td>

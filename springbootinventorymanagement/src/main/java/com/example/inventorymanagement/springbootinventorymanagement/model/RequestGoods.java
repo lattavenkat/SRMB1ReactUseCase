@@ -1,16 +1,12 @@
 package com.example.inventorymanagement.springbootinventorymanagement.model;
 
 import java.util.Date;
-import java.util.UUID;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "requestgoods")
@@ -29,10 +25,12 @@ public class RequestGoods {
 
     private Date requestDate;
 
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "requestId", updatable = false, nullable = false)
-    private UUID requestId;
+    // @GeneratedValue(generator = "UUID")
+    // @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    // @Column(name = "requestId", updatable = false, nullable = false)
+    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long requestId;
 
     private String vendorId;
     private String vendorName;
@@ -43,7 +41,7 @@ public class RequestGoods {
 
 
     public RequestGoods(long id, String ordercode, String productname, String productcode, String productcatg,
-            String productprice, String productqty, Date requestDate, UUID requestId, String vendorId,
+            String productprice, String productqty, Date requestDate, long requestId, String vendorId,
             String vendorName) {
         this.id = id;
         this.ordercode = ordercode;
@@ -139,12 +137,12 @@ public class RequestGoods {
     }
 
 
-    public UUID getRequestId() {
+    public long getRequestId() {
         return requestId;
     }
 
 
-    public void setRequestId(UUID requestId) {
+    public void setRequestId(long requestId) {
         this.requestId = requestId;
     }
 

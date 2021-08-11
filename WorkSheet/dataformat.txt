@@ -1,0 +1,29 @@
+Request Goods form details:
+
+
+OrderCode
+ProductCode
+ProductName
+ProductCategory
+ProductPrice
+ProductQuantity
+RequestDate(Automatic Date Creation{No Manual Entry})
+VendorId
+VendorName
+
+========================================================================
+
+Vendor creation Form in Admin
+
+setVendorid
+setVendorname
+setUsername
+setPassword
+setHint
+setPhone
+setAadhar
+setRole
+setSuppliername
+setSuppliermail
+setSupplierphone
+setSupplieraddress
